@@ -1,0 +1,63 @@
+# Bewerbungstracker — OOA Analyse
+
+## 1. Akteure
+
+### Benutzer (Chercheur d'emploi)
+L'utilisateur principal du système. Il recherche un emploi et souhaite suivre l'ensemble de ses candidatures de manière organisée.
+
+### Administrateur
+Gère les comptes utilisateurs et les données globales du système.
+
+---
+
+## 2. Fonctionnalités par acteur
+
+### Benutzer
+
+**Authentification**
+- S'inscrire (créer un compte)
+- Se connecter / se déconnecter
+
+**Gestion des candidatures**
+- Créer une nouvelle candidature
+- Modifier une candidature existante
+- Supprimer une candidature
+- Consulter les détails d'une candidature
+
+**Suivi des candidatures**
+- Actualiser le statut d'une candidature (envoyée → entretien → acceptée / refusée)
+- Ajouter des notes personnelles à une candidature
+
+**Documents**
+- Joindre des documents à une candidature (CV, Anschreiben, Zeugnisse)
+- Consulter les documents liés à une candidature
+
+**Vue d'ensemble et statistiques**
+- Consulter la liste de toutes ses candidatures
+- Filtrer et rechercher par statut, entreprise, date ou type de contrat
+- Visualiser des statistiques : taux de réussite, taux de refus, nombre de candidatures par mois
+
+### Administrateur
+- Gérer les comptes utilisateurs (activer, désactiver, supprimer)
+- Consulter les statistiques globales du système
+
+---
+
+## 3. Données d'une candidature
+
+| Attribut | Type | Description |
+|---|---|---|
+| Nom de l'entreprise | Texte | L'entreprise à laquelle on postule |
+| Nom du poste | Texte | L'intitulé du poste visé |
+| Type de contrat | Texte | Werkstudent, Praktikum, Vollzeit, Teilzeit |
+| Exigences du poste | Texte | Les qualifications et compétences demandées |
+| Compétences recherchées | Texte | Les compétences techniques et personnelles requises |
+| Lieu du poste | Texte | Ville, remote, hybride |
+| Salaire / rémunération | Nombre | Rémunération proposée (même approximative) |
+| Lien vers l'offre | URL | L'adresse de l'annonce originale |
+| Date d'envoi | Date | Quand la candidature a été envoyée |
+| Date de réponse | Date | Quand l'entreprise a répondu |
+| Statut | Texte | Envoyée, Entretien, Acceptée, Refusée |
+| Contact recruteur | Texte | Nom et email du RH ou recruteur |
+| Documents joints | Fichiers | CV, Anschreiben, Zeugnisse envoyés |
+| Notes personnelles | Texte | Impressions, préparation, remarques |
