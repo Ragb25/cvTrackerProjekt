@@ -42,11 +42,11 @@ public class Dokument {
         this.dateityp = dateityp;
     }
 
-    public String getHochladedatum() {
+    public LocalDate getHochladedatum() {
         return hochladedatum;
     }
 
-    public void setHochladedatum(String hochladedatum) {
+    public void setHochladedatum(LocalDate hochladedatum) {
         this.hochladedatum = hochladedatum;
     }
 
