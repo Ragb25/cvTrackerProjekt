@@ -2,6 +2,9 @@ package de.cvTracker.cvTracker.controller;
 
 import de.cvTracker.cvTracker.model.Bewerbung;
 import de.cvTracker.cvTracker.service.BewerbungService;
+
+import java.util.List;
+
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -19,6 +22,16 @@ public class BewerbungController {
     @PutMapping("/bewerbungen/{id}")
     public Bewerbung bewerbungAktualisieren(@RequestBody Bewerbung bewerbung, @PathVariable Long id){
         return bewerbungService.bewerbungAktualisieren(id, bewerbung);
+    }
+
+    @GetMapping("/bewerbungen")
+    public List<Bewerbung> getBewerbungen(){
+        return bewerbungService.getBewerbungen();
+    }
+
+    @DeleteMapping ("/delete/{id}")
+    public void deleteBewerbung(@PathVariable Long id){
+        bewerbungService.deleteBewerbung(id);
     }
 
 }

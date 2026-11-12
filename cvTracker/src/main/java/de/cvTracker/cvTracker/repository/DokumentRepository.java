@@ -1,5 +1,8 @@
 package de.cvTracker.cvTracker.repository;
 
-public class DokumentRepository {
+import de.cvTracker.cvTracker.model.Dokument;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface DokumentRepository extends JpaRepository <Dokument, Long>{
 
 }

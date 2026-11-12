@@ -5,6 +5,7 @@ import de.cvTracker.cvTracker.repository.BewerbungRepository;
 import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BewerbungService {
@@ -35,5 +36,28 @@ public class BewerbungService {
         altBewerbung.setNotizs(bewerbung.getNotizs());
 
         return bewerbungRepository.save(altBewerbung);
+    }
+    public List<Bewerbung> getBewerbungen(){
+        return bewerbungRepository.findAll();
+    }
+
+    public void deleteBewerbung(Long id){
+        bewerbungRepository.deleteById(id);
+    }
+
+    public List <Dokument> getDokuments(Long id){
+        Optional<Bewerbung> bewerbung = bewerbungRepository.findById(id);
+        if(!bewerbung.isEmpty()){
+            return bewerbung.get().getDokuments();
+        } else {
+            return List.of();
+        }
+    }
+
+    public List <Notiz> getNotiz(Long id){
+        Optional<Bewerbung> bewerbung = bewerbungRepository.findById(id);
+        if(!bewerbung.isEmpty()){
+            return bewerbung.get().getNotizs();
+        } else return List.of();
     }
 }

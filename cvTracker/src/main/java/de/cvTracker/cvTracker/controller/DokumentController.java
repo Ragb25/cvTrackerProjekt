@@ -5,18 +5,36 @@ import de.cvTracker.cvTracker.service.DokumentService;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController 
 public class DokumentController {
-    DokumentService dokumentService;
-    BewerbungService bewerbungService;
+    private final DokumentService dokumentService;
+    private final BewerbungService bewerbungService;
+
+    public DokumentController(DokumentService dokumentService, BewerbungService bewerbungService) {
+        this.dokumentService = dokumentService;
+        this.bewerbungService = bewerbungService;
+    }
 
     @GetMapping("/documents/{id}")
     public List <Dokument> getDokuments(@PathVariable Long id){
         return bewerbungService.getDokuments(id);
+    }
+
+    @PostMapping ("/documentHinzufuegen")
+    public Dokument dokumentHinzufuegen(@RequestBody Dokument dokument){
+        return dokumentService.dokumentHinzufuegen(dokument);
+    }
+
+    @DeleteMapping("/dokumentLoeschen/{id}")
+    public void dokumentLoeschen(Long id){
+        dokumentService.dokumentLoeschen(id);
     }
 
 }

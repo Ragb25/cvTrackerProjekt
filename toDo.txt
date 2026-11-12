@@ -1,0 +1,9 @@
+DokumentRepository erstellen (Interface, wie BewerbungRepository)
+DokumentService erstellen (create, delete)
+DokumentController erstellen (POST, DELETE)
+NotizRepository erstellen
+NotizService erstellen (create, delete, getAll)
+NotizController erstellen (POST, DELETE)
+GET-Endpunkt für Notizen einer Bewerbung (gleiches Muster wie getDokuments)
+./mvnw clean install — alles testen
+CORS-Konfiguration in SecurityConfig hinzufügen
