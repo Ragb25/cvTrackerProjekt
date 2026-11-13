@@ -1,9 +1,4 @@
-DokumentRepository erstellen (Interface, wie BewerbungRepository)
-DokumentService erstellen (create, delete)
-DokumentController erstellen (POST, DELETE)
-NotizRepository erstellen
-NotizService erstellen (create, delete, getAll)
-NotizController erstellen (POST, DELETE)
-GET-Endpunkt für Notizen einer Bewerbung (gleiches Muster wie getDokuments)
-./mvnw clean install — alles testen
-CORS-Konfiguration in SecurityConfig hinzufügen
+API testen — Docker starten, App mit ./mvnw spring-boot:run starten, Endpunkte testen (Benutzer registrieren, Bewerbung erstellen, etc.)
+React-Projekt aufsetzen — npx create-react-app ausführen, Projektstruktur verstehen
+Erste React-Komponente bauen — Registrierungsformular, das mit dem Backend kommuniziert
+Fehlerbehandlung im Backend — sinnvolle Fehlermeldungen bei ungültigen Anfragen

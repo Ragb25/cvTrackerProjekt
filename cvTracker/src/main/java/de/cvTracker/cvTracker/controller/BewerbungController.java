@@ -6,7 +6,11 @@ import de.cvTracker.cvTracker.service.BewerbungService;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.*;
-
+/**
+ * Hier ist die Benutzerklasse
+ * Endpunkte um Bewerbungen zu verwalten
+ * @author = Ramane
+ * **/
 @RestController
 public class BewerbungController {
     private final BewerbungService bewerbungService;
@@ -14,6 +18,7 @@ public class BewerbungController {
     public BewerbungController(BewerbungService bewerbungService) {
         this.bewerbungService = bewerbungService;
     }
+    
     @PostMapping("/bewerbungErstellen")
     public Bewerbung bewerbungErstellen(@RequestBody Bewerbung bewerbung){
         return bewerbungService.erstelleBewerbung(bewerbung.getAntwortdatum(), bewerbung.getBeschreibung(), bewerbung.getGehalt(), bewerbung.getKontaktRecruiter(), bewerbung.getLinkStellenanzeige(), bewerbung.getOrt(), bewerbung.getSendedatum(), bewerbung.getStatus(), bewerbung.getTitel(), bewerbung.getUnternehmen(), bewerbung.getVertragsart(), bewerbung.getBenutzer(), bewerbung.getDokuments(), bewerbung.getNotizs());

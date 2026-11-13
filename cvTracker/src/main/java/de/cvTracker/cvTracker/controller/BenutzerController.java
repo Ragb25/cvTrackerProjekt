@@ -4,6 +4,11 @@ import de.cvTracker.cvTracker.model.Benutzer;
 import de.cvTracker.cvTracker.service.BenutzerService;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * Hier ist die BenutzerController. 
+ * Endpunkt um einen Benutzer zu registrieren
+ * @author = Ramane
+ * **/
 @RestController
 public class BenutzerController {
     private final BenutzerService benutzerService;

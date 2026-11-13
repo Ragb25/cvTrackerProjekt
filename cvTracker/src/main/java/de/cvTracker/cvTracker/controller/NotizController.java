@@ -13,7 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 import de.cvTracker.cvTracker.model.Notiz;
 import de.cvTracker.cvTracker.service.BewerbungService;
 import de.cvTracker.cvTracker.service.NotizService;
-
+/**
+ * Hier ist die NotizController
+ * Endpunkte um Notizen zu verwalten
+ * @author = Ramane
+ * **/
 @RestController 
 public class NotizController {
     private final NotizService notizService;

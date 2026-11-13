@@ -11,7 +11,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
+/**
+ * Hier ist die Dokumentkontroller
+ * Endpunkte um Dokumente zu verwalten
+ * @author = Ramane
+ * **/
 @RestController 
 public class DokumentController {
     private final DokumentService dokumentService;
@@ -33,7 +37,7 @@ public class DokumentController {
     }
 
     @DeleteMapping("/dokumentLoeschen/{id}")
-    public void dokumentLoeschen(Long id){
+    public void dokumentLoeschen(@PathVariable Long id){
         dokumentService.dokumentLoeschen(id);
     }
 

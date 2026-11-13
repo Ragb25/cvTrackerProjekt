@@ -6,7 +6,10 @@ import java.time.LocalDate;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
+/**
+ * Hier ist die Dokument
+ * @author = Ramane
+ * **/
 @Entity
 public class Dokument {
     private String dateiname;

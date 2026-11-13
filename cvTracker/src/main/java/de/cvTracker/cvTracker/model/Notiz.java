@@ -5,7 +5,10 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
+/**
+ * Hier ist die Klasse Notiz
+ * @author = Ramane
+ * **/
 @Entity
 public class Notiz {
     private LocalDate datum;

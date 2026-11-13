@@ -7,7 +7,10 @@ import de.cvTracker.cvTracker.model.Bewerbung;
 import de.cvTracker.cvTracker.model.Notiz;
 import de.cvTracker.cvTracker.repository.BewerbungRepository;
 import de.cvTracker.cvTracker.repository.NotizRepository;
-
+/**
+ * Hier ist die Klasse NotizService
+ * @author = Ramane
+ * **/
 @Service 
 public class NotizService {
     private final NotizRepository notizRepository;
@@ -19,7 +22,11 @@ public class NotizService {
         this.notizRepository = notizRepository;
         this.bewerbungRepository = bewerbungRepository;
     }
-
+    /**
+     * Ein Notiz muss zu einem einzigen Bewerbung gehören
+     * @param notiz
+     * @return
+     */
     public Notiz notizErstellen(Notiz notiz){
         Long bewerbung_id = notiz.getBewerbung().getId();
         Bewerbung bewerbung = bewerbungRepository.findById(bewerbung_id).get();
@@ -32,6 +39,12 @@ public class NotizService {
         notizRepository.deleteById(id);
     }
 
+    /**
+     * Geänderte Werte werden aktualisiert.
+     * @param id
+     * @param notiz
+     * @return
+     */
     public Notiz notizAktualisieren(Long id, Notiz notiz){
         Notiz altNotiz = notizRepository.findById(id).orElse(null);
 
