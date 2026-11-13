@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @Entity
 public class Dokument {
     private String dateiname;
@@ -12,8 +14,9 @@ public class Dokument {
     private LocalDate hochladedatum;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     private String kategorie;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @ManyToMany
     private List<Bewerbung> bewerbungs;
 

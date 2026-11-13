@@ -13,10 +13,10 @@ import java.util.List;
 public class Bewerbung {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     private LocalDate antwortdatum;
     private String beschreibung;
-    private double gehalt;
+    private Double gehalt;
     private String kontaktRecruiter;
     private String linkStellenanzeige;
     private String ort;
@@ -30,12 +30,12 @@ public class Bewerbung {
     private Benutzer benutzer;
     @ManyToMany(mappedBy = "bewerbungs")
     private List<Dokument> dokuments;
-    @OneToMany(mappedBy = "bewerbung")
+    @OneToMany(mappedBy = "bewerbung", cascade = CascadeType.ALL)
     private List<Notiz> notizs;
 
     public Bewerbung(){}
 
-     public Bewerbung(LocalDate antwortdatum, String beschreibung, double gehalt, String kontaktRecruiter, String linkStellenanzeige, String ort, LocalDate sendedatum, Status status, String titel, String unternehmen, String vertragsart){
+     public Bewerbung(LocalDate antwortdatum, String beschreibung, Double gehalt, String kontaktRecruiter, String linkStellenanzeige, String ort, LocalDate sendedatum, Status status, String titel, String unternehmen, String vertragsart){
          this.antwortdatum = antwortdatum;
          this.beschreibung = beschreibung;
          this.gehalt = gehalt;
@@ -66,11 +66,11 @@ public class Bewerbung {
         this.beschreibung = beschreibung;
     }
 
-    public double getGehalt() {
+    public Double getGehalt() {
         return gehalt;
     }
 
-    public void setGehalt(double gehalt) {
+    public void setGehalt(Double gehalt) {
         this.gehalt = gehalt;
     }
 
@@ -166,7 +166,10 @@ public class Bewerbung {
         return notizs;
     }
 
-    public void setNotizs(List<Notiz> notizs) {
+    public void addNotizs(Notiz notizs) {
+        this.notizs.add(notizs);
+    }
+    public void setNotizs(List <Notiz> notizs) {
         this.notizs = notizs;
     }
 }

@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 /**
  * Hier ist die Benutzerklasse
@@ -14,10 +16,11 @@ public class Benutzer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     private String email;
     private String name;
     private String password;
+    @JsonIgnore
     @OneToMany(mappedBy = "benutzer")
     private List<Bewerbung> bewerbungs;
 

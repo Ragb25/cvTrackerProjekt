@@ -24,7 +24,7 @@ public class NotizController {
         this.bewerbungService = bewerbungService;
     }
 
-    @PostMapping ("/notizErstellen/")
+    @PostMapping ("/notizErstellen")
     public Notiz notizErstellen(@RequestBody Notiz notiz){
         return notizService.notizErstellen(notiz);
     }

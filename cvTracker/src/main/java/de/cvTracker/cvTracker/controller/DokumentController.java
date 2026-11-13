@@ -22,12 +22,12 @@ public class DokumentController {
         this.bewerbungService = bewerbungService;
     }
 
-    @GetMapping("/documents/{id}")
+    @GetMapping("/dokuments/{id}")
     public List <Dokument> getDokuments(@PathVariable Long id){
         return bewerbungService.getDokuments(id);
     }
 
-    @PostMapping ("/documentHinzufuegen")
+    @PostMapping ("/dokumentHinzufuegen")
     public Dokument dokumentHinzufuegen(@RequestBody Dokument dokument){
         return dokumentService.dokumentHinzufuegen(dokument);
     }

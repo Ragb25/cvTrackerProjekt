@@ -29,8 +29,8 @@ public class BewerbungController {
         return bewerbungService.getBewerbungen();
     }
 
-    @DeleteMapping ("/delete/{id}")
-    public void deleteBewerbung(@PathVariable Long id){
+    @DeleteMapping ("/bewerbungLoeschen/{id}")
+    public void bewerbungLoeschen(@PathVariable Long id){
         bewerbungService.deleteBewerbung(id);
     }
 
